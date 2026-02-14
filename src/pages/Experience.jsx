@@ -312,14 +312,12 @@ export default function Experience() {
       className="h-screen w-screen bg-black relative overflow-hidden cursor-pointer select-none"
       onClick={handleNextScene}
     >
-      {/* Fade-out overlay */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isFadingOut ? 1 : 0 }}
         transition={{ duration: 1.5 }}
         className="absolute inset-0 bg-black z-50 pointer-events-none"
       />
-      {/* Background particles layer - larger, more visible */}
       {Array.from({ length: 20 }).map((_, i) => (
         <motion.div
           key={`bg-${i}`}
@@ -348,8 +346,6 @@ export default function Experience() {
           ✦
         </motion.div>
       ))}
-
-      {/* Floating particles - foreground */}
       {Array.from({ length: 12 }).map((_, i) => (
         <motion.div
           key={`fg-${i}`}
@@ -379,8 +375,6 @@ export default function Experience() {
           ✦
         </motion.div>
       ))}
-
-      {/* Scene Content Container */}
       <AnimatePresence mode="wait">
         <motion.div
           key={scene.id}
@@ -390,7 +384,6 @@ export default function Experience() {
           transition={{ duration: 0.6, ease: "easeInOut" }}
           className="absolute inset-0 flex items-center justify-between"
         >
-          {/* Left Image - Extreme Left */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -409,8 +402,7 @@ export default function Experience() {
               />
             </div>
           </motion.div>
-
-          {/* Center Text with Scrollbar */}
+          
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -436,8 +428,7 @@ export default function Experience() {
               </div>
             </div>
           </motion.div>
-
-          {/* Right Image - Extreme Right */}
+          
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -459,7 +450,6 @@ export default function Experience() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Music Toggle Button */}
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -478,7 +468,6 @@ export default function Experience() {
         )}
       </motion.button>
 
-      {/* Instruction hint */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -488,7 +477,6 @@ export default function Experience() {
         Click or press Enter to continue
       </motion.div>
 
-      {/* Background Music */}
       <audio ref={audioRef} src="/First Sight (Background Score).mp3" loop preload="auto" />
 
       <style>{`
